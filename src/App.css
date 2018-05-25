@@ -1,0 +1,31 @@
+.App {
+  height: 100%;
+}
+
+.btn.active {
+  color: #fff !important;
+  background: url('gradient.png') !important;
+  background-size: cover !important;
+  border-color: #fff !important;
+}
+
+.App-header {
+  background-color: #282c34;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+}
+.App-content {
+  margin: auto;
+}
+circle, rect {
+  stroke-width: 2px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
