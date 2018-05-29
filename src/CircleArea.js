@@ -164,7 +164,7 @@ class CircleArea extends React.Component {
   render () {
     return (
       <div className='row justify-content-md-center' style={{width: 'inherit'}}>
-        <div className='col-lg-5'>
+        <div className='col-lg-5 text-center'>
           {this.renderDetails()}
         </div>
         <div className='col-lg-7 text-center'>
