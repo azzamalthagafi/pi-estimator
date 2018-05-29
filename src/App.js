@@ -18,7 +18,7 @@ class App extends Component {
         return <CircleArea width={500} height={500}/>;
 
       case 'BN':
-        return <BuffonNeedle />
+        return <BuffonNeedle width={500} height={500}/>
 
       default:
         return <CircleArea width={500} height={500}/>;

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { select } from 'd3-selection'
 const Latex = require('react-latex');
+const random = require("random-js")();
 
 
 class CircleArea extends React.Component {
@@ -63,12 +64,12 @@ class CircleArea extends React.Component {
 
     // function to generate a point uniformly at random
     this.genPoint = function() {
-        var x = Math.floor(Math.random() * this.props.width);
-        var y = Math.floor(Math.random() * this.props.height);
+        var x = random.integer(0, this.props.width)
+        var y = random.integer(0, this.props.height)
         return {x, y};
     }
 
-    // modifying state would not work due to the async nature of setState
+    // modifying state directly would not work due to the async nature of setState
     var inCount = 0;
     var totalCount = 0;
     // create points
@@ -110,7 +111,7 @@ class CircleArea extends React.Component {
       <div>
         <h3>{'Monte Carlo Estimation of Pi using circle\'s area'}</h3>
           <Latex>
-          Assuming the square has side length , we know that the
+          Assuming the square has side length $d$, we know that the
           area of the square is $d^2$ while the area of the circle is $\pi(\frac d 2)^2$ $= \frac 1 4 \pi d^2$
           The ratio of the area of the circle to the area of the square is equal to $\frac \pi 4$
           </Latex>
@@ -118,7 +119,7 @@ class CircleArea extends React.Component {
           <br/>
           <Latex>
           By selecting points uniformly at random from the square, we know that the probability
-          of the point being within the circle is $p=\frac \pi 4$. We can estimate the probability using a Monte Carlo
+          of the point being within the circle is $\frac \pi 4$. We can estimate the probability using a Monte Carlo
           simulation and thus derive an estimation of $\pi$
           </Latex>
           <br/>
@@ -163,13 +164,13 @@ class CircleArea extends React.Component {
   render () {
     return (
       <div className='row justify-content-md-center' style={{width: 'inherit'}}>
-        <div className='col-lg-7 order-last'>
+        <div className='col-lg-5'>
+          {this.renderDetails()}
+        </div>
+        <div className='col-lg-7 text-center'>
           <svg ref={node => this.node = node}
             width = {this.props.width} height = {this.props.height}>
           </svg>
-        </div>
-        <div className='col-lg-5 order-first'>
-          {this.renderDetails()}
         </div>
       </div>
     );
