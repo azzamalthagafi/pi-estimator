@@ -88,7 +88,7 @@ class BuffonNeedle extends React.Component {
        // randomly select a center point based on h
        var lines = [];
        for (var i = 0; i < this.props.width; i += this.state.d) {
-         if (i != 0) lines.push(i);
+         if (i !== 0) lines.push(i);
        }
 
        // pick a line to base h on
