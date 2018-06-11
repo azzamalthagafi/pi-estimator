@@ -30,5 +30,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://azzamalthagafi.github.io/myapp"
+  "homepage" : "http://piestimator.aazzam.com"
 }
